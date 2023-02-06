@@ -1,0 +1,341 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #121212;
+  display: flex;
+  flex-direction: row;
+  gap: 124px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.left {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.infos {
+  margin-left: 56px;
+  margin-top: 56px;
+}
+
+.infos h1 {
+  margin-bottom: 32px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  color: white;
+}
+
+p {
+  color: white;
+  font-weight: 500;
+  margin: 0;
+}
+
+a {
+  color: white;
+}
+
+a:hover {
+  color: #e50914;
+}
+
+img {
+  width: 64px;
+  margin-left: 56px;
+  margin-bottom: 56px;
+}
+
+.right {
+  width: 100%;
+  margin-right: 56px;
+}
+
+.filters {
+  font-size: 1.5rem;
+  color: white;
+  display: flex;
+  gap: 32px;
+  color: white;
+  margin-top: 56px;
+  font-weight: 700;
+  position: relative;
+}
+
+.filter {
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+
+.filter.selected {
+  color: #e50914;
+}
+
+.tab-indicator {
+  height: 4px;
+  background-color: #e50914;
+  border-radius: 4px;
+  position: absolute;
+  bottom: 0;
+
+  transition: 0.3s;
+  left: 0px;
+}
+
+.graph-container {
+  width: 90%;
+  height: 100%;
+  margin-top: 24px;
+  margin-bottom: 32px;
+  height: 572px;
+  position: relative;
+  /* display: flex; */
+}
+
+h3 {
+  color: white;
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.chart {
+  width: 100%;
+  height: 57.2px;
+  display: flex;
+  align-items: center;
+}
+
+.chart .block {
+  width: 100%;
+  height: 48px;
+  background: #e50914;
+  border-radius: 0 8px 8px 0;
+  position: relative;
+}
+
+.chart .name {
+  margin: 0;
+  color: white;
+  text-align: right;
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+}
+
+.chart .views {
+  margin-left: 16px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.bars rect {
+  cursor: pointer;
+}
+
+.bars rect.selected {
+  stroke: white;
+  stroke-width: 2px;
+}
+
+#graph {
+  margin-right: 56px;
+}
+
+#graph text,
+#graph .tick {
+  pointer-events: none;
+}
+
+.labels {
+  pointer-events: none;
+}
+
+.label {
+  transform: translate(8px);
+  min-width: 120px;
+  font-size: 0.9rem;
+  /* margin-right: 720px; */
+}
+
+.label-number {
+  opacity: 0.7;
+  font-weight: 500;
+}
+
+.ticker {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.actions {
+  margin-bottom: 64px;
+}
+
+.playPause {
+  position: relative;
+}
+
+#play,
+#pause {
+  background-color: transparent;
+  border: none;
+  height: 32px;
+  width: 32px;
+  position: absolute;
+}
+
+#play img,
+#pause img {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  cursor: pointer;
+}
+
+#play {
+  display: none;
+}
+
+.range-container {
+  width: 90%;
+  position: relative;
+  height: 32px;
+  margin-left: 56px;
+}
+
+.dateBubble {
+  color: white;
+  position: absolute;
+  top: -24px;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  display: none;
+}
+
+#dateSelector {
+  /* margin-left: 56px; */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+}
+
+#dateSelector::-webkit-slider-runnable-track {
+  background: #4b4b4b;
+  height: 4px;
+}
+
+#dateSelector::-moz-range-track {
+  background: #4b4b4b;
+  height: 4px;
+}
+
+#dateSelector::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background-color: #e50914;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  border: 2px solid white;
+  margin-top: -6px;
+}
+
+#dateSelector::-moz-range-thumb {
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background-color: #e50914;
+  border: 2px solid white;
+}
+
+#dateSelector::-moz-range-progress {
+  background: white;
+  height: 4px;
+}
+
+.range-start,
+.range-end {
+  font-weight: 400;
+  position: absolute;
+  bottom: -24px;
+}
+
+.range-start {
+  left: 0;
+}
+
+.range-end {
+  right: 0;
+}
+
+@media screen and (max-width: 1024px) {
+  body {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .left {
+    flex-direction: row-reverse;
+    align-items: center;
+    height: revert;
+    margin-top: 56px;
+    margin-left: 56px;
+    width: revert;
+    justify-content: flex-end;
+
+    gap: 56px;
+  }
+
+  .infos {
+    margin: 0;
+  }
+
+  .infos h1 {
+    margin-bottom: 16px;
+  }
+
+  img {
+    margin: 0;
+  }
+
+  .right {
+    margin: 0 56px 56px 56px;
+  }
+
+  .graph-container {
+    width: 80%;
+  }
+
+  .range-container {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .ticker {
+    left: 0;
+    bottom: -32px;
+  }
+
+  .graph-container {
+    margin-bottom: 56px;
+  }
+}
