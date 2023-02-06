@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Netflix - Top 10</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="img/netflix_logo.svg">
+  <script src="d3.js"></script>
+  <script src="script.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+
+</head>
+
+<body>
+  <section class="left">
+    <div class="infos">
+      <h1>
+        Top 10 Netflix <br />
+      </h1>
+      <p>
+        Source :
+        <a href="https://top10.netflix.com/">https://top10.netflix.com/</a>
+      </p>
+    </div>
+    <img src="img/netflix_logo.svg" />
+  </section>
+  <section class="right">
+    <div class="filters">
+      <p class="filter serie-filter selected">Séries</p>
+      <p class="filter film-filter">Films</p>
+      <div class="tab-indicator"></div>
+    </div>
+    <div class="graph-container">
+      <svg id="graph" height="100%" width="100%" preserveaspectratio=none></svg>
+    </div>
+    <div class="actions">
+      <div class="playPause">
+        <button id="play"><img src="img/play.svg" alt="Lire"></button>
+        <button id="pause"><img src="img/pause.svg" alt="Pause"></button>
+      </div>
+      <div class="range-container">
+        <span class="dateBubble"></span>
+        <input type="range" id="dateSelector" min="0" max="661">
+        <p class="range-start">Juillet 2021</p>
+        <p class="range-end">Mai 2022</p>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>
